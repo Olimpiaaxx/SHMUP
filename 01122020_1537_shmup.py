@@ -146,7 +146,7 @@ class Mob(pygame.sprite.Sprite):
         self.speedy = random.randrange(1, 8)
         self.speedx = random.randrange(-3, 3)
         self.rot = 0
-        self.rot_speed = random.randrange(-8, 8)
+        self.rot_speed = random.randrange(-5, 10)
         self.last_update = pygame.time.get_ticks()
 
     def rotate(self):
@@ -177,7 +177,7 @@ class Bullet(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.bottom = y
         self.rect.centerx = x
-        self.speedy = -10
+        self.speedy = -7
 
     def update(self):
         self.rect.y += self.speedy
@@ -229,6 +229,7 @@ class Explosion(pygame.sprite.Sprite):
 def show_go_screen():
     screen.blit(background, background_rect)
     draw_text(screen, "SHMUP!", 64, WIDTH / 2, HEIGHT / 4)
+    draw_text(screen, "by Olimpia", 35, WIDTH / 2, HEIGHT / 2.75)
     draw_text(screen, "ARROWS to move and SPACE to fire", 22, WIDTH / 2, HEIGHT / 2)
     draw_text(screen, "Press a key to begin", 18, WIDTH / 2, HEIGHT * 3 / 4)
     pygame.display.flip()
@@ -344,7 +345,7 @@ while running:
     hits = pygame.sprite.spritecollide(player, powerups, True)
     for hit in hits:
         if hit.type == 'shield':
-            player.shield += random.randrange(10, 30)
+            player.shield += random.randrange(5, 20)
             shield_sound.play()
             if player.shield >= 100:
                 player.shield = 100
