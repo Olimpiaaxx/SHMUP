@@ -34,7 +34,8 @@ def draw_text(surf, text, size, x, y):
     text_surface = font.render(text, True, WHITE)
     text_rect = text_surface.get_rect()
     text_rect.midtop = (x, y)
-    surf.blit(text_surface, text_rect)
+    surf.
+    (text_surface, text_rect)
 
 def newmob():
     m = Mob()
