@@ -244,7 +244,7 @@ def show_go_screen():
                 waiting = False
 
 #load all game graphics
-background = pygame.image.load(path.join(img_dir, 'starfield.png')). convert()
+background = pygame.image.load(path.join(img_dir, 'starfield.png')).convert()
 background_rect = background.get_rect()
 player_img = pygame.image.load(path.join(img_dir, "playerShip1_red.png")).convert()
 player_mini_img = pygame.transform.scale(player_img, (25, 19))
